@@ -1,0 +1,16 @@
+<nav [color]="theme" mat-tab-nav-bar>
+  <a
+    mat-tab-link
+    *ngFor="let link of links"
+    (click)="activeLink = link.path"
+    [active]="activeLink.includes(link.path)"
+    [routerLink]="link.path"
+    class="mat-tab-label-active"
+  >
+    {{ link.name }}
+  </a>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,45 @@
+input,
+textarea {
+  color: white;
+}
+div {
+  color: white;
+}
+p {
+  padding: 1em;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+h2 {
+  color: #f561ba;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.form-field {
+  width: 50%;
+}
+
+.notes-field {
+  width: 76%;
+}
+
+.notes-field-wrapper {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.submit-container {
+  text-align: center;
+  padding-top: 2em;
+}
+
+@media (max-width: 450px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+.debug {
+  color: #efff64;
+}

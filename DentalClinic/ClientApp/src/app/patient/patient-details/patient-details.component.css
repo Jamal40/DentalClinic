@@ -1,0 +1,48 @@
+* {
+  color: white;
+}
+.info-container {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  justify-content: left;
+  row-gap: 10px;
+}
+.large-value {
+  margin-top: -15px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+button {
+  color: white;
+  /* background-color: #b85c38; */
+}
+.info-type {
+  color: #a0c1b8;
+  font-size: 1.25rem;
+}
+.info-value {
+  font-size: 1.25rem;
+  color: #719fb0;
+}
+table {
+  width: 100%;
+  background-color: #0f044c;
+}
+.mat-cell,
+.mat-header-cell {
+  padding-left: 1em;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+.buttons-container {
+  display: flex;
+  gap: 5px;
+}
+
+.submit-container {
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+/* .add-btn {
+  background-color: #519872;
+} */

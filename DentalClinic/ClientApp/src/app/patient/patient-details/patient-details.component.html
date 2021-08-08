@@ -1,0 +1,94 @@
+<div class="info-container">
+  <p class="info-type">Name:</p>
+  <p class="info-value">
+    {{
+      relatedPatient?.patient.firstName +
+        " " +
+        relatedPatient?.patient.secondName +
+        " " +
+        relatedPatient?.patient.familyName
+    }}
+  </p>
+
+  <p class="info-type">Age:</p>
+  <p class="info-value">
+    {{ getAgeFromBirthDate(relatedPatient?.patient.birthDate) }}
+  </p>
+
+  <p class="info-type">National ID:</p>
+  <p class="info-value">{{ relatedPatient?.patient.nationalID }}</p>
+
+  <p class="info-type">Phone Number:</p>
+  <p class="info-value">{{ relatedPatient?.patient.phoneNumber }}</p>
+
+  <p class="info-type">Notes:</p>
+  <p class="info-value large-value">{{ relatedPatient?.patient.notes }}</p>
+</div>
+
+<div class="submit-container">
+  <button
+    (click)="goToAddSession(relatedPatient?.patient.patientID)"
+    mat-raised-button
+    class="add-btn"
+    color="accent"
+  >
+    Add a new session
+  </button>
+</div>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <!-- Amount To Pay Column -->
+  <ng-container matColumnDef="amountToPay">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount To Pay</th>
+    <td mat-cell *matCellDef="let element">{{ element.amountToPay }}</td>
+  </ng-container>
+
+  <!-- Amount Paid Column -->
+  <ng-container matColumnDef="amountPaid">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Paid Amount</th>
+    <td mat-cell *matCellDef="let element">{{ element.amountPaid }}</td>
+  </ng-container>
+
+  <!-- Date Column -->
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.date | date: "fullDate" }}
+    </td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <div class="buttons-container">
+        <button (click)="goToDetails(element.patientID)" mat-raised-button>
+          Details
+        </button>
+        <button
+          (click)="goToEdit(element.sessionID)"
+          mat-raised-button
+          color="primary"
+        >
+          Edit
+        </button>
+        <button
+          (click)="delete(element.patientID)"
+          mat-raised-button
+          color="warn"
+        >
+          Delete
+        </button>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

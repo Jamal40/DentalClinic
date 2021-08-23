@@ -24,6 +24,11 @@ export class GeneralIssuesListComponent implements OnInit {
   }
 
   deleteIssue(id: number): void {
-    console.log(id);
+    this.generalIssuesService.deleteIssue(id).subscribe((value) => {
+      this.loadGeneralIssues();
+    });
+  }
+  onIssueAdded(e: any) {
+    this.loadGeneralIssues();
   }
 }

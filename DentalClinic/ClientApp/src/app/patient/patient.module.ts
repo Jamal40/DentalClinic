@@ -19,6 +19,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PatientDetailsComponent } from './patient-details/patient-details.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     PatientsHomeComponent,
     PatientDetailsComponent,
     EditPatientComponent,
+    SearchBarComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +44,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     MatTableModule,
     MatPaginatorModule,
     FormsModule,
+    MatIconModule,
   ],
 })
 export class PatientModule {}

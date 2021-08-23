@@ -2,6 +2,8 @@
   Add a new patient
 </button>
 
+<app-search-bar (filterRequested)="onFilterRequested($event)"></app-search-bar>
+
 <div class="container">
-  <app-patients-list></app-patients-list>
+  <app-patients-list [searchText]="searchText"></app-patients-list>
 </div>

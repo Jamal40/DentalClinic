@@ -1,0 +1,16 @@
+.container {
+  margin-top: 2em;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(48, 146, 136);
+  margin-top: 0.6em;
+}
+
+input {
+  color: antiquewhite;
+}

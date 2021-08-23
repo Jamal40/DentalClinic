@@ -32,6 +32,14 @@ export class PatientsService {
     return this.client.get<Patient[]>(this.baseUrl);
   }
 
+  public getFilteredPatients(searchText): Observable<Patient[]> {
+    return this.client.get<Patient[]>(this.baseUrl, {
+      params: {
+        searchText,
+      },
+    });
+  }
+
   public getPatient(id: number): Observable<TransmittedPatient> {
     return this.client.get<TransmittedPatient>(`${this.baseUrl}/${id}`);
   }

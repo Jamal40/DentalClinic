@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { PatientsService } from 'src/app/services/patients.service';
 import { MatTableDataSource } from '@angular/material/table';
@@ -10,7 +18,8 @@ import { Patient } from 'src/app/Types/Types';
   templateUrl: './patients-list.component.html',
   styleUrls: ['./patients-list.component.css'],
 })
-export class PatientsListComponent implements AfterViewInit {
+export class PatientsListComponent implements AfterViewInit, OnChanges {
+  @Input() searchText = '';
   displayedColumns: string[] = [
     'patient-name',
     'patient-birthDate',
@@ -24,6 +33,9 @@ export class PatientsListComponent implements AfterViewInit {
     private router: Router,
     private patientsService: PatientsService
   ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    this.fillTabelFromDatabase();
+  }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -32,10 +44,12 @@ export class PatientsListComponent implements AfterViewInit {
   }
 
   fillTabelFromDatabase() {
-    this.patientsService.getPatients().subscribe((value) => {
-      this.dataSource = new MatTableDataSource<Patient>(value);
-      this.dataSource.paginator = this.paginator;
-    });
+    this.patientsService
+      .getFilteredPatients(this.searchText)
+      .subscribe((value) => {
+        this.dataSource = new MatTableDataSource<Patient>(value);
+        this.dataSource.paginator = this.paginator;
+      });
   }
 
   getAgeFromBirthDate(birthDateStr: string) {

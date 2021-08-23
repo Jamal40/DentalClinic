@@ -5,5 +5,7 @@
       <p class="issue-delete" (click)="deleteIssue(issue.issueID)">delete</p>
     </ng-container>
   </div>
-  <app-add-general-issue></app-add-general-issue>
+  <app-add-general-issue
+    (issueAdded)="onIssueAdded($event)"
+  ></app-add-general-issue>
 </div>

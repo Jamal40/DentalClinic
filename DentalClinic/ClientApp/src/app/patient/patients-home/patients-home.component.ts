@@ -7,10 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./patients-home.component.css'],
 })
 export class PatientsHomeComponent implements OnInit {
+  searchText = '';
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
   goToAddComponent() {
     this.router.navigate(['/', 'patients', 'add']);
+  }
+
+  onFilterRequested(searchText: string) {
+    this.searchText = searchText;
   }
 }

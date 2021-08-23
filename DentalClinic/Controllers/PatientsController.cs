@@ -21,11 +21,20 @@ namespace DentalClinic.Controllers
             _context = context;
         }
 
-        // GET: api/Patients
+
+
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Patient>>> GetPatients()
+        public async Task<ActionResult<IEnumerable<Patient>>> GetFilteredPatients([FromQuery]string searchText="")
         {
-            return await _context.Patients.ToListAsync();
+            searchText = string.IsNullOrEmpty(searchText) ? "" : searchText;
+            return await _context.Patients
+                        .Where(
+                                p => p.FirstName.Contains(searchText)
+                                || p.SecondName.Contains(searchText)
+                                || p.FamilyName.Contains(searchText)
+                                || p.PhoneNumber.Contains(searchText)
+                                || p.NationalID.Contains(searchText)
+                               ).ToListAsync();
         }
 
         // GET: api/Patients/5

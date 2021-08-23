@@ -1,0 +1,28 @@
+<form [formGroup]="generalIssueForm">
+  <div class="form-container">
+    <mat-form-field color="accent" class="example-form-field" appearance="fill">
+      <mat-label>Clearable input</mat-label>
+      <input formControlName="issueName" matInput type="text" />
+      <button
+        *ngIf="true"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearInput()"
+      >
+        <mat-icon color="warn">close</mat-icon>
+      </button>
+    </mat-form-field>
+    <p
+      class="validation-error"
+      *ngIf="
+        generalIssueForm.controls.issueName.errors?.required &&
+        generalIssueForm.touched
+      "
+    >
+      You have to input the issue name
+    </p>
+  </div>
+
+  <button mat-raised-button mat-button color="accent">Add</button>
+</form>

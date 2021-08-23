@@ -5,8 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Sister Modules
 import { PatientModule } from './patient/patient.module';
 import { SessionsModule } from './sessions/sessions.module';
+import { ConfigsModule } from './configs/configs.module';
+
 //Angular Material Components
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -20,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     HttpClientModule,
     PatientModule,
     SessionsModule,
+    ConfigsModule,
     MatListModule,
     MatTabsModule,
   ],

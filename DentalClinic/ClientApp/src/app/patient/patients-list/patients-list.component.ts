@@ -28,6 +28,10 @@ export class PatientsListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit(): void {
+    this.fillTabelFromDatabase();
+  }
+
+  fillTabelFromDatabase() {
     this.patientsService.getPatients().subscribe((value) => {
       this.dataSource = new MatTableDataSource<Patient>(value);
       this.dataSource.paginator = this.paginator;
@@ -45,6 +49,8 @@ export class PatientsListComponent implements AfterViewInit {
     this.router.navigate(['/', 'patients', 'edit', id]);
   }
   delete(id: number) {
-    console.log(id);
+    this.patientsService.deletePatient(id).subscribe((value) => {
+      this.fillTabelFromDatabase();
+    });
   }
 }

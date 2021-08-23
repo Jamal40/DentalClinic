@@ -1,0 +1,9 @@
+<div class="ist-container">
+  <div class="main">
+    <ng-container *ngFor="let issue of generalHealthIssuesList">
+      <p class="issue-name">{{ issue.issueName }}</p>
+      <p class="issue-delete" (click)="deleteIssue(issue.issueID)">delete</p>
+    </ng-container>
+  </div>
+  <app-add-general-issue></app-add-general-issue>
+</div>

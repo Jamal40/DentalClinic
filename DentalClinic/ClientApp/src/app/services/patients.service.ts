@@ -40,13 +40,17 @@ export class PatientsService {
     id: number,
     editedPatient: Patient,
     assignedGeneralHealthIssues: GeneralMedicalIssue[]
-  ) {
+  ): Observable<any> {
     const merged: TransmittedPatient = {
       patient: editedPatient,
       assignedGeneralHealthIssues,
       assignedSessions: null,
     };
     merged.patient.patientID = id;
-    return this.client.put(`${this.baseUrl}/${id}`, merged);
+    return this.client.put<Observable<any>>(`${this.baseUrl}/${id}`, merged);
+  }
+
+  public deletePatient(id: number): Observable<any> {
+    return this.client.delete<Observable<any>>(`${this.baseUrl}/${id}`);
   }
 }

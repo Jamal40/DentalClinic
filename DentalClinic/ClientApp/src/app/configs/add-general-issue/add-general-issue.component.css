@@ -1,0 +1,12 @@
+.validation-error {
+  color: #f44336;
+}
+.mat-input-element {
+  color: white;
+}
+form {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 10px;
+}

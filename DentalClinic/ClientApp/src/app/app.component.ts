@@ -18,6 +18,6 @@ export class AppComponent {
   theme: ThemePalette = 'warn';
   links: { name: string; path: string }[] = [
     { name: 'Patients', path: '/patients' },
-    { name: 'Configurations', path: '/config' },
+    { name: 'Configurations', path: '/configurations' },
   ];
 }

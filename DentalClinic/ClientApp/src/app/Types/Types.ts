@@ -3,11 +3,6 @@ export interface GeneralMedicalIssue {
   issueName: string;
 }
 
-export interface GeneralMedicalIssue {
-  issueID: number;
-  issueName: string;
-}
-
 export interface Session {
   sessionID: number;
   amountToPay: number;

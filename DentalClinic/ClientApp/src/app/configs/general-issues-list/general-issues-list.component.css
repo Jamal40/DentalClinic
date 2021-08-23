@@ -1,0 +1,29 @@
+.list-container {
+}
+.main {
+  padding-left: 3em;
+  color: #c62a88;
+  display: grid;
+  grid-template-columns: 0.25fr 50px;
+  margin-bottom: 1.5em;
+}
+.issue-name {
+  color: #efb7b7;
+  font-size: 1.25rem;
+}
+.issue-delete {
+  text-align: center;
+  color: #bd4b4b;
+  font-size: 1rem;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  transition: background-color 0.3s linear, color 0.3s linear,
+    border-color 0.3s linear;
+}
+.issue-delete:hover {
+  background-color: #000000;
+  color: red;
+  border-color: red;
+  cursor: pointer;
+}

@@ -21,6 +21,7 @@ namespace DentalClinic.Controllers
         }
 
         // GET: api/Sessions
+        //used
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Session>>> GetSessions()
         {
@@ -28,6 +29,7 @@ namespace DentalClinic.Controllers
         }
 
         // GET: api/Sessions/5
+        //used
         [HttpGet("{id}")]
         public async Task<ActionResult<Session>> GetSession(int id)
         {
@@ -43,6 +45,7 @@ namespace DentalClinic.Controllers
 
         // PUT: api/Sessions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // used
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSession(int id, TransmittedSession transmittedSession)
         {

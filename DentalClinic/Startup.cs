@@ -1,6 +1,7 @@
 using DentalClinic.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,11 @@ namespace DentalClinic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DentalClinicContext>(options => options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=DentalClinicDB; Integrated Security=true;"));
+            services.AddDefaultIdentity<IdentityUser>()
+            .AddEntityFrameworkStores<DentalClinicContext>();
+            //services.AddIdentityServer()
+            //.AddApiAuthorization<IdentityUser, DentalClinicContext>();
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -31,11 +37,11 @@ namespace DentalClinic
 
             services.AddCors(options => options.AddPolicy(name: corsAllowancePolicy,
                 builder =>
-                        {
-                            builder.AllowAnyHeader();
-                            builder.AllowAnyMethod();
-                            builder.AllowAnyOrigin();
-                        }));
+                {
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyOrigin();
+                }));
 
             services.AddMvc();
             services.AddSwaggerGen();

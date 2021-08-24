@@ -1,9 +1,10 @@
 ﻿using DentalClinic.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DentalClinic.Data
 {
-    public class DentalClinicContext : DbContext
+    public class DentalClinicContext : IdentityDbContext
     {
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Session> Sessions { get; set; }

@@ -3,7 +3,7 @@
 }
 .info-container {
   display: grid;
-  grid-template-columns: 2fr 6fr;
+  grid-template-columns: 4fr 6fr;
   justify-content: left;
   row-gap: 10px;
 }
@@ -46,3 +46,12 @@ table {
 /* .add-btn {
   background-color: #519872;
 } */
+
+.list {
+  padding: 0;
+  list-style-position: inside;
+}
+
+li {
+  color: #719fb0;
+}

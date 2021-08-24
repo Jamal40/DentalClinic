@@ -32,6 +32,7 @@ export class PatientDetailsComponent implements OnInit {
       this.patientsService
         .getPatient(this.relatedPatientId)
         .subscribe((value) => {
+          console.log(value);
           this.relatedPatient = value;
           this.dataSource = this.relatedPatient.assignedSessions;
         });

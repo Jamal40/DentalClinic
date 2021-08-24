@@ -50,7 +50,11 @@ export class EditSessionComponent implements AfterContentInit {
     this.sessionService
       .editSession(this.sessionForm.value)
       .subscribe((value) => {
-        console.log(value);
+        this.router.navigate([
+          '/',
+          'patients',
+          this.sessionForm.value.patientID,
+        ]);
       });
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from 'src/app/services/session.service';
 
 @Component({
@@ -12,7 +12,8 @@ import { SessionService } from 'src/app/services/session.service';
 export class AddSessionComponent implements AfterContentInit {
   constructor(
     private activatedRoute: ActivatedRoute,
-    private sessionService: SessionService
+    private sessionService: SessionService,
+    private router: Router
   ) {}
 
   ngAfterContentInit(): void {
@@ -46,7 +47,7 @@ export class AddSessionComponent implements AfterContentInit {
     this.sessionService
       .addSession(this.sessionForm.value)
       .subscribe((value) => {
-        console.log(value);
+        this.router.navigate(['/', 'patients', value.patientID]);
       });
   }
 }

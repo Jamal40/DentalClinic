@@ -6,12 +6,56 @@
           <mat-panel-title> Caries</mat-panel-title>
         </mat-expansion-panel-header>
         <section class="example-section">
-          <mat-radio-group [(ngModel)]="x">
-            <mat-radio-button class="example-margin" value="after"
-              >After</mat-radio-button
+          <mat-radio-group class="radio-buttons-container" [(ngModel)]="x">
+            <mat-radio-button class="example-margin" value="mild"
+              >Mild</mat-radio-button
             >
-            <mat-radio-button class="example-margin" value="before"
-              >Before</mat-radio-button
+            <mat-radio-button class="example-margin" value="moderate"
+              >Moderate</mat-radio-button
+            >
+
+            <mat-radio-button class="example-margin" value="severe"
+              >Severe</mat-radio-button
+            >
+          </mat-radio-group>
+        </section>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Fracture</mat-panel-title>
+        </mat-expansion-panel-header>
+        <section class="example-section">
+          <mat-radio-group class="radio-buttons-container" [(ngModel)]="y">
+            <mat-radio-button class="example-margin" value="mild"
+              >Mild</mat-radio-button
+            >
+            <mat-radio-button class="example-margin" value="moderate"
+              >Moderate</mat-radio-button
+            >
+
+            <mat-radio-button class="example-margin" value="severe"
+              >Severe</mat-radio-button
+            >
+          </mat-radio-group>
+        </section>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Wear</mat-panel-title>
+        </mat-expansion-panel-header>
+        <section class="example-section">
+          <mat-radio-group class="radio-buttons-container" [(ngModel)]="z">
+            <mat-radio-button class="example-margin" value="mild"
+              >Mild</mat-radio-button
+            >
+            <mat-radio-button class="example-margin" value="moderate"
+              >Moderate</mat-radio-button
+            >
+
+            <mat-radio-button class="example-margin" value="severe"
+              >Severe</mat-radio-button
             >
           </mat-radio-group>
         </section>

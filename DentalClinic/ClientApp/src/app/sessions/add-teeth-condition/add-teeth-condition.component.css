@@ -18,3 +18,11 @@ section {
   display: flex;
   flex-direction: column;
 }
+.mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.mat-expansion-panel {
+  margin-bottom: 0.5em;
+}

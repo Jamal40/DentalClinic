@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTeethConditionComponent implements OnInit {
   x: string = '';
+  y: string = '';
+  z: string = '';
   showFiller = false;
   checked = false;
   indeterminate = false;

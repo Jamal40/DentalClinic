@@ -21,8 +21,6 @@ namespace DentalClinic.Controllers
             _context = context;
         }
 
-
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetFilteredPatients([FromQuery]string searchText="")
         {

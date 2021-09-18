@@ -4,14 +4,16 @@ using DentalClinic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DentalClinic.Migrations
 {
     [DbContext(typeof(DentalClinicContext))]
-    partial class DentalClinicContextModelSnapshot : ModelSnapshot
+    [Migration("20210917182254_addingToothDbSet")]
+    partial class addingToothDbSet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,12 +110,7 @@ namespace DentalClinic.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PatientID")
-                        .HasColumnType("int");
-
                     b.HasKey("ID");
-
-                    b.HasIndex("PatientID");
 
                     b.ToTable("Teeth");
                 });
@@ -367,15 +364,6 @@ namespace DentalClinic.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("DentalClinic.Models.Tooth", b =>
-                {
-                    b.HasOne("DentalClinic.Models.Patient", "Patient")
-                        .WithMany("Teeth")
-                        .HasForeignKey("PatientID");
-
-                    b.Navigation("Patient");
-                });
-
             modelBuilder.Entity("DentalClinic.Models.ToothCondition", b =>
                 {
                     b.HasOne("DentalClinic.Models.Tooth", "Tooth")
@@ -454,8 +442,6 @@ namespace DentalClinic.Migrations
             modelBuilder.Entity("DentalClinic.Models.Patient", b =>
                 {
                     b.Navigation("Sessions");
-
-                    b.Navigation("Teeth");
                 });
 
             modelBuilder.Entity("DentalClinic.Models.Tooth", b =>

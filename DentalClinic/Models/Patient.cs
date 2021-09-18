@@ -10,6 +10,7 @@ namespace DentalClinic.Models
         {
             Sessions = new HashSet<Session>();
             GeneralMedicalHistory = new HashSet<GeneralMedicalIssue>();
+            Teeth = new HashSet<Tooth>();
         }
         public int PatientID { get; set; }
 
@@ -33,6 +34,8 @@ namespace DentalClinic.Models
         public ICollection<Session> Sessions { get; set; }
 
         public ICollection<GeneralMedicalIssue> GeneralMedicalHistory { get; set; }
+
+        public ICollection<Tooth> Teeth { get; set; }
 
     }
 }

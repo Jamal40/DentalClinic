@@ -1,0 +1,27 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Caries</mat-panel-title>
+        </mat-expansion-panel-header>
+        <section class="example-section">
+          <mat-radio-group [(ngModel)]="x">
+            <mat-radio-button class="example-margin" value="after"
+              >After</mat-radio-button
+            >
+            <mat-radio-button class="example-margin" value="before"
+              >Before</mat-radio-button
+            >
+          </mat-radio-group>
+        </section>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+</mat-drawer-container>

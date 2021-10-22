@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DentalClinic.Models
 {
     public class Session
     {
+        public Session()
+        {
+            Teeth = new HashSet<Tooth>();
+        }
         public int SessionID { get; set; }
 
         [Required]
@@ -21,5 +26,7 @@ namespace DentalClinic.Models
 
         public int PatientID { get; set; }
         public Patient Patient { get; set; }
+
+        public ICollection<Tooth> Teeth { get; set; }
     }
 }

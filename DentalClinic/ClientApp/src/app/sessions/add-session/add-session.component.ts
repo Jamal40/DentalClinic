@@ -42,6 +42,11 @@ export class AddSessionComponent implements AfterContentInit {
     });
   }
 
+  grabToothConditions(e) {
+    console.log('I got the value, thnaks, child');
+    console.log(e);
+  }
+
   submit() {
     console.log(this.sessionForm.value);
     this.sessionService

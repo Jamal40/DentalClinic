@@ -18,12 +18,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { ToothStatusInputComponent } from './tooth-status-input/tooth-status-input.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AddSessionComponent,
     EditSessionComponent,
     AddTeethConditionComponent,
+    ToothStatusInputComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +42,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatSelectModule,
   ],
 })
 export class SessionsModule {}

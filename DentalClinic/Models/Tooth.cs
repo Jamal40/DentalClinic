@@ -14,6 +14,8 @@ namespace DentalClinic.Models
         public int ID { get; set; }
         public int Number { get; set; }
         public ICollection<ToothCondition> Conditions { get; set; }
-        public Patient Patient { get; set; }
+
+        public int SessionID { get; set; }
+        public Session Session { get; set; }
     }
 }

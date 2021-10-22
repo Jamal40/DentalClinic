@@ -66,6 +66,11 @@
   </section>
 </form>
 
+<app-tooth-status-input
+  [toothNumber]="1"
+  (toothConditionChanged)="grabToothConditions($event)"
+></app-tooth-status-input>
+
 <div class="submit-container">
   <button type="button" (click)="submit()" mat-raised-button color="accent">
     Submit

@@ -23,6 +23,8 @@ namespace DentalClinic.Models
         public int ID { get; set; }
         public ConditionName Name { get; set; }
         public ConditionDegree  Degree { get; set; }
+
+        public int ToothID { get; set; }
         public Tooth Tooth { get; set; }
     }
 }

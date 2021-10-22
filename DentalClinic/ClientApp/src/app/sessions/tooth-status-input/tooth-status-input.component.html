@@ -1,0 +1,36 @@
+<form [formGroup]="toothStatusForm">
+  <p>{{ toothNumber }}</p>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Caries</mat-label>
+      <mat-select [formControl]="toothStatusForm.controls.caries">
+        <mat-option>--</mat-option>
+        <mat-option [value]="0"> mild </mat-option>
+        <mat-option [value]="1"> moderate </mat-option>
+        <mat-option [value]="2"> severe </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Fracture</mat-label>
+      <mat-select [formControl]="toothStatusForm.controls.fracture">
+        <mat-option>--</mat-option>
+        <mat-option [value]="0"> mild </mat-option>
+        <mat-option [value]="1"> moderate </mat-option>
+        <mat-option [value]="2"> severe </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Wear</mat-label>
+      <mat-select [formControl]="toothStatusForm.controls.wear">
+        <mat-option>--</mat-option>
+        <mat-option [value]="0"> mild </mat-option>
+        <mat-option [value]="1"> moderate </mat-option>
+        <mat-option [value]="2"> severe </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>
